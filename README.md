@@ -95,4 +95,4 @@ The shared resource is the attitude state structure, which stores the spacecraft
 
 ## AI Usage
 
-ChatGPT was used to help interpret the assignment, explain FreeRTOS concepts such as task states and scheduling behavior, assist with the `xTaskCreate()` parameter justifications in Part B, and help develop the space-themed task system and written responses for Part C. Claude was used to help create and format the concurrency diagram. Google AI was used to research Zephyr RTOS and gather information for Part D.
+ChatGPT was used to help interpret the assignment, explain FreeRTOS concepts such as task states and scheduling behavior, assist with the `xTaskCreate()` parameter justifications in Part B, and help develop the space-themed tasks for Part C. Claude was used to help create and format the concurrency diagram. Google AI was used to research Zephyr RTOS and gather information for Part D.
