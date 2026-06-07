@@ -34,7 +34,7 @@ T1 > T2 > T3 > T4
 T2 should use `vTaskDelayUntil()` rather than `vTaskDelay()`. Since T2 is a periodic control loop, it needs to execute at a consistent interval. `vTaskDelayUntil()` schedules the next release relative to a fixed reference time, preventing timing drift and minimizing phase error. `vTaskDelay()` delays relative to when the task finishes running, which can cause the task period to gradually drift over time.
 
 ### 4. State-machine trace
-**Running → Blocked:** Task finishes processing and executes `vTaskDelay()` to wait for the next period.
+**Running → Blocked:** Task finishes processing and executes vTaskDelayUntil() to wait until its next release time.
 
 **Blocked → Ready:** The delay period expires (driven by the RTOS tick interrupt), which pushes the task into the queue.
 
@@ -47,7 +47,7 @@ T2 should use `vTaskDelayUntil()` rather than `vTaskDelay()`. Since T2 is a peri
 xTaskCreate(
     control_task,            // Task function
     "T2_Control",            // Task name
-    256,                     // Stack size
+    256,                     // Stack size (words)
     NULL,                    // Task parameters
     16,                      // Priority
     &ControlTaskHandle       // Task handle
